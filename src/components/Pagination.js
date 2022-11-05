@@ -4,8 +4,8 @@ function Pagination(props){
         pageNumbers.push(index);
         
     }
-    const buttons=pageNumbers.map((num)=>{
-       return <li className="listItem"><button onClick={()=> props.paginate(num)}  className="linkItem">{num}</button></li>
+    const buttons=pageNumbers.map((num,index)=>{
+       return <li className="listItem" key={index}><button  onClick={()=> props.paginate(num)}  className="linkItem">{num}</button></li>
     })
 
     return(

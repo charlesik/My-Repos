@@ -21,8 +21,6 @@ function CurrentList(props) {
     .then((res) => res.json())
     .then((data) => setRepos(data));
   },[])
-  console.log(profile)
-  console.log(repos)
   const lastRepo= currentRepos*reposPerPage;
   const firstRepo= lastRepo-reposPerPage;
   const currentPage= repos.slice(firstRepo,lastRepo)
@@ -36,7 +34,7 @@ function CurrentList(props) {
     return (
       <div className="repo" key={repo.name}>
         <p>{repo.name}</p>
-        <Link to={`details/${repo.name}`}>View Details</Link>
+        <Link className="viewdetails" to={`details/${repo.name}`}>View Details</Link>
       </div>
     );
   });
